@@ -1,5 +1,5 @@
 import unittest
-from user_cred_classes import Users
+from user_cred_classes import Users, Credentials
 
 class TestPasswordLocker(unittest.TestCase):
 	"""
@@ -32,7 +32,27 @@ class TestPasswordLocker(unittest.TestCase):
 		self.new_user.create_user()
 		self.assertEqual(len(Users.user_info),1)
 		
+	def tearDown(self):
+		'''
+		Function to reinitialize back to square one
+		'''
+		Users.user_info = []
 		
+	def test_auth_check(self):
+		'''
+		test_auth_check test case to test if the user provided correct information
+		'''
+		
+		self.new_user.create_user()
+		self.another_user = Users("Twende","Kazi","mkenya")
+		self.another_user.create_user()
+		
+		for cred in Users.user_info:
+			if cred.first == self.new_user.first and cred.password == self.new_user.password:
+				identity = self.new_user.first
+		return identity
+		
+		self.assertEqual(identity, Credentials.user_check(self.new_user.first,self.new_user.password))
 		
 		
 		
