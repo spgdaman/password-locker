@@ -13,7 +13,13 @@ class Users:
 		"""
 			Information needed to create a password saving object
 		"""
-		self.name = name
-		self.platform = platform
-		self.username = username
+		self.first = first
+		self.last = last
 		self.password = password
+	
+	def create_user(self):
+		"""
+			Create an instance of a new user
+		"""
+		
+		self.user_info.append(self)
