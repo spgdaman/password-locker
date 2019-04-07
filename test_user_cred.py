@@ -1,7 +1,7 @@
 import unittest
 from user_cred_classes import Users, Credentials
 
-'''
+
 class TestUsers(unittest.TestCase):
 	"""
 	Test class that defines test cases for the Users behaviour
@@ -38,7 +38,7 @@ class TestUsers(unittest.TestCase):
 		#Function to reinitialize back to square one
 		"""
 		Users.user_info = []
-'''
+
 
 	
 class TestCredentials(unittest.TestCase):
@@ -65,12 +65,26 @@ class TestCredentials(unittest.TestCase):
 		
 		self.assertEqual(identity, Credentials.user_check(another_user.first,another_user.password))
 		
-	def test_setUp(self):
+	def test_setup(self):
 		"""
-		test_init to create a new Credentials object to begin tests
+		test_setUp to create a new Credentials object to begin tests
 		"""
 		
 		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
+	
+	def test_init(self):
+		"""
+		test_init to check if the Credentials objects are initialized correctly
+		"""
+		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
+		self.assertEqual(self.new_cred.name, "Simon")
+		self.assertEqual(self.new_cred.username, "SPG")
+		self.assertEqual(self.new_cred.platform, "Instagram")
+		self.assertEqual(self.new_cred.pwd, "W3w3n!mkenya")
+		
+
+		
+		
 		
 if __name__ == '__main__':
 	unittest.main()

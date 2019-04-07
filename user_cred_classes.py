@@ -43,7 +43,7 @@ class Credentials(Users):
 				identity = cred.first
 		return identity
 	
-	def __init__(self,name,username,platform,password):
+	def __init__(self,name,username,platform,pwd):
 		"""
 			Initialize new Credentials object
 		"""
@@ -51,7 +51,7 @@ class Credentials(Users):
 		self.name = name
 		self.username = username
 		self.platform = platform
-		self.password = password
+		self.pwd = pwd
 		
 	
 	
