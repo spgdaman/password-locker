@@ -50,9 +50,9 @@ class TestCredentials(unittest.TestCase):
 	"""
 
 	def test_auth_check(self):
-		'''
+		"""
 		test_auth_check test case to test if the user provided correct information
-		'''
+		"""
 		self.new_user = Users("Simon","Gatheru","W3w3n!mkenya")
 		self.new_user.create_user()
 		another_user = Users("Twende","Kazi","mkenya")
@@ -65,7 +65,12 @@ class TestCredentials(unittest.TestCase):
 		
 		self.assertEqual(identity, Credentials.user_check(another_user.first,another_user.password))
 		
+	def test_setUp(self):
+		"""
+		test_init to create a new Credentials object to begin tests
+		"""
 		
+		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
 		
 if __name__ == '__main__':
 	unittest.main()
