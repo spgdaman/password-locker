@@ -65,7 +65,7 @@ class TestCredentials(unittest.TestCase):
 		
 		self.assertEqual(identity, Credentials.user_check(another_user.first,another_user.password))
 		
-	def test_setup(self):
+	def test_setUp(self):
 		"""
 		test_setUp to create a new Credentials object to begin tests
 		"""
@@ -90,7 +90,17 @@ class TestCredentials(unittest.TestCase):
 		self.new_cred.save_cred()
 		self.assertEqual(len(Credentials.credentials_info),1)
 		
+	def tearDowm(self):
+		"""
+		reinitializes the credentials_info list to its empty state
+		"""
+		Credentials.credentials_info = []
 		
-		
+	def 
+	
+	
+	
+	
+	
 if __name__ == '__main__':
 	unittest.main()

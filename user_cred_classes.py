@@ -59,5 +59,12 @@ class Credentials(Users):
 		"""
 		Credentials.credentials_info.append(self)
 		
-	
+	def password_gen()
+		"""
+		Generate a random string of letters and digits 
+		"""
+		lettersAndNumbers = string.ascii_letters + string.digits
+		password = ''.join(random.choice(lettersAndNumbers) for i in range(8))
+		return password
+		
 	
