@@ -53,6 +53,11 @@ class Credentials(Users):
 		self.platform = platform
 		self.pwd = pwd
 		
-	
+	def save_cred(self):
+		"""
+			Saves credentials in credentials_info list
+		"""
+		Credentials.credentials_info.append(self)
+		
 	
 	

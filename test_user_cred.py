@@ -82,7 +82,13 @@ class TestCredentials(unittest.TestCase):
 		self.assertEqual(self.new_cred.platform, "Instagram")
 		self.assertEqual(self.new_cred.pwd, "W3w3n!mkenya")
 		
-
+	def test_save_cred(self):
+		"""
+		test_save_cred to check if the initialized object is saved to credentials_info
+		"""
+		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
+		self.new_cred.save_cred()
+		self.assertEqual(len(Credentials.credentials_info),1)
 		
 		
 		
