@@ -8,3 +8,9 @@ class TestPasswordLocker(unittest.TestCases):
 	Args:
 		unittest.TestCase: Class from the unittest module to create unit tests
 	"""
+	
+	def setUp(self):
+		'''
+		Function creates a new user object
+		'''
+		self.new_user = Users("Simon","Gatheru","W3w3n!mkenya")
