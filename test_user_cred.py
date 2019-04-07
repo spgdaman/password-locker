@@ -115,6 +115,18 @@ class TestCredentials(unittest.TestCase):
 		snapchat = Credentials("Simon","SPG","Snapchat","W3w3n!mkenya")
 		snapchat.save_cred()
 		self.assertEqual(Credentials.find_platform('Snapchat'),snapchat)
+		
+	def test_del_cred(self):
+		"""
+		test_del_cred test to delete credentials from the credentials list
+		"""
+		Credentials.credentials_info = []
+		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
+		self.new_cred.save_cred()
+		snapchat = Credentials("Simon","SPG","Snapchat","W3w3n!mkenya")
+		snapchat.save_cred()
+		del_item = Credentials.find_platform('Snapchat')
+		self.assertEqual(Credentials.del_cred(del_item),"Deleted")
 	
 	
 if __name__ == '__main__':

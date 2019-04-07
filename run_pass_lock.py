@@ -79,6 +79,18 @@ def main():
 						pwd = input("Enter your password:		")
 						create_cred(fname,username,platform,pwd)
 						print(f"Your credentials for site: {platform}, with username: {username} and password: {pwd} has been saved!")
+					
+					elif user_input == 'snp':
+						print("Enter the account details you want saved below")
+						username = input("Enter your username:		")
+						platform = input("Enter the platform:		")
+						pwd = password_gen()
+						create_cred(fname,username,platform,pwd)
+						print(f"Your credentials for site: {platform}, with username: {username} and password: {pwd} has been saved!")
+						
+					elif user_input == 'sc':
+						print("Your saved credentials are as below")
+						 show_cred(username)
 
 
 

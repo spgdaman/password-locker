@@ -61,7 +61,7 @@ class Credentials(Users):
 		
 	def password_gen():
 		"""
-		Generate a random string of letters and digits 
+			Generate a random string of letters and digits 
 		"""
 		lettersAndNumbers = string.ascii_letters + string.digits
 		password = ''.join(random.choice(lettersAndNumbers) for i in range(8))
@@ -81,10 +81,20 @@ class Credentials(Users):
 	@classmethod
 	def find_platform(cls,platform):
 		"""
-		
+			Finds the platform's credentials
 		"""
 		
 		for cred in cls.credentials_info:
 			if cred.platform == platform:
 				return cred
-	
+				
+	@classmethod
+	def del_cred(cls,cred):
+		"""
+			Deletes credentials saved, and used together with the find platform method
+		"""
+		
+		for credential in cls.credentials_info:
+			if credential == cred:
+				del credential
+				return "Deleted"
