@@ -44,11 +44,22 @@ def show_cred(username):
 	'''
 	return Credentials.show_credentials(username)
 	
+def main():
+	print("Welcome to the password locker app")
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	
 	
-	
-	
-	
-	
+if __name__ == '__main__':
+	main()		
