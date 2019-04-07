@@ -23,3 +23,12 @@ class Users:
 		"""
 		
 		self.user_info.append(self)
+
+class Credential(Users):
+	'''
+		Class that holds credential information and associated methods eg. add, remove and view creadentials
+	'''
+	
+	credentials_info = []
+	user_cred_info = []
+	
