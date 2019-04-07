@@ -24,5 +24,17 @@ class TestPasswordLocker(unittest.TestCase):
 		self.assertEqual(self.new_user.last,"Gatheru")
 		self.assertEqual(self.new_user.password,"W3w3n!mkenya")
 		
+	def test_save_user(self):
+		'''
+		test_save_user test case to test if the object is saved
+		'''
+		
+		self.new_user.create_user()
+		self.assertEqual(len(Users.user_info),1)
+		
+		
+		
+		
+		
 if __name__ == '__main__':
 	unittest.main()
