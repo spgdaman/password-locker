@@ -5,6 +5,7 @@ def create_user(first,last,pwd):
 	Creates a new user account
 	'''
 	user_mpya = Users(first,last,pwd)
+	return user_mpya
 
 def register_user(user):
 	'''
@@ -47,7 +48,7 @@ def show_cred(username):
 def main():
 	print("Welcome to the password locker app")
 	while True:
-		print("................"*10)
+		print("................\n"*10)
 		print("Please use the following short codes to interface with the app\n ln - Login\n rg - Register\n lo - Logout")
 		user_input = input("Enter input here: ")
 		
@@ -59,9 +60,25 @@ def main():
 			register_user(create_user(fname, lname, pwd))
 			print(f"Your account is registered as follows, {fname} {lname} and {pwd} is your password")
 			
-		#elif 
-
-
+		elif user_input == 'ln':
+			print("Enter your username and password below to log in to your account")
+			username = input("Enter your username here:		")
+			password = input("Enter your password here:		")
+			if user_check(username, password) == username:
+				print(f"You have sucessfully logged in {username}!")
+				
+				while True:
+					print("................\n"*10)
+					print("Please use the following short codes to interact with the app")
+					user_input = input("sn - Save new credentials\n snp - Save new credentials with own password\n sc - Show credentials")
+					
+					if user_input == 'sn':
+						print("Enter the account details you want saved below")
+						username = input("Enter your username:		")
+						platform = input("Enter the platform:		")
+						pwd = input("Enter your password:		")
+						create_cred(fname,username,platform,pwd)
+						print(f"Your credentials for site: {platform}, with username: {username} and password: {pwd} has been saved!")
 
 
 
