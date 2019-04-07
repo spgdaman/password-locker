@@ -78,4 +78,13 @@ class Credentials(Users):
 				cls.user_cred_info.append(cred)
 			return cls.user_cred_info	
 	
+	@classmethod
+	def find_platform(cls,platform):
+		"""
+		
+		"""
+		
+		for cred in cls.credentials_info:
+			if cred.platform == platform:
+				return cred
 	

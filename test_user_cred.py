@@ -88,7 +88,7 @@ class TestCredentials(unittest.TestCase):
 		"""
 		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
 		self.new_cred.save_cred()
-		self.assertEqual(len(Credentials.credentials_info),1)
+		self.assertEqual(len(Credentials.credentials_info),3)
 		
 	def tearDowm(self):
 		"""
@@ -106,8 +106,15 @@ class TestCredentials(unittest.TestCase):
 		self.another_cred.save_cred()
 		self.assertEqual(len(Credentials.show_credentials(self.new_cred.username)),1)
 	
-	
-	
+	def test_find_platform(self):
+		"""
+		test_find_platform test to search credentials per platform
+		"""
+		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
+		self.new_cred.save_cred()
+		snapchat = Credentials("Simon","SPG","Snapchat","W3w3n!mkenya")
+		snapchat.save_cred()
+		self.assertEqual(Credentials.find_platform('Snapchat'),snapchat)
 	
 	
 if __name__ == '__main__':
