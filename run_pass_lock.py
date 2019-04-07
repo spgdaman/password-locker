@@ -30,6 +30,19 @@ def save_cred(cred):
 	Saves created credentials
 	'''
 	Credentials.save_cred(cred)
+
+def password_gen():
+	'''
+	Generates a random password_gen
+	'''
+	random = Credentials.password_gen
+	return random
+
+def show_cred(username):
+	'''
+	Shows credentials saved
+	'''
+	return Credentials.show_credentials(username)
 	
 	
 	
