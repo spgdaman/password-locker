@@ -96,7 +96,15 @@ class TestCredentials(unittest.TestCase):
 		"""
 		Credentials.credentials_info = []
 		
-	def 
+	def test_show_credentials(self):
+		"""
+		test_show_credentials test to check if credentials saved is displayed
+		"""
+		self.new_cred = Credentials("Simon","SPG","Instagram","W3w3n!mkenya")
+		self.new_cred.save_cred()
+		self.another_cred = Credentials("Simon","SPG","Gmail","W3w3n!mkenya")
+		self.another_cred.save_cred()
+		self.assertEqual(len(Credentials.show_credentials(self.new_cred.username)),1)
 	
 	
 	

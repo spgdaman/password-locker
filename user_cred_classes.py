@@ -59,12 +59,23 @@ class Credentials(Users):
 		"""
 		Credentials.credentials_info.append(self)
 		
-	def password_gen()
+	def password_gen():
 		"""
 		Generate a random string of letters and digits 
 		"""
 		lettersAndNumbers = string.ascii_letters + string.digits
 		password = ''.join(random.choice(lettersAndNumbers) for i in range(8))
 		return password
-		
+	
+	@classmethod
+	def show_credentials(cls,username):
+		"""
+			Shows the saved credentials
+		"""
+	
+		for cred in cls.credentials_info:
+			if cred.username == username:
+				cls.user_cred_info.append(cred)
+			return cls.user_cred_info	
+	
 	
