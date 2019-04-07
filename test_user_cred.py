@@ -1,9 +1,9 @@
 import unittest
 from user_cred_classes import Users, Credentials
 
-class TestPasswordLocker(unittest.TestCase):
+class TestUsers(unittest.TestCase):
 	"""
-	Test class that defines test cases for the password_locker behaviour
+	Test class that defines test cases for the Users behaviour
 	
 	Args:
 		unittest.TestCase: Class from the unittest module to create unit tests
@@ -38,11 +38,19 @@ class TestPasswordLocker(unittest.TestCase):
 		'''
 		Users.user_info = []
 		
+class TestCredentials(unittest.TestCase):
+	"""
+		Test class that defines test cases for the Credentials behaviour
+	
+		Args:
+			unittest.TestCase: Class from the unittest module to create unit tests
+	"""
+
 	def test_auth_check(self):
 		'''
 		test_auth_check test case to test if the user provided correct information
 		'''
-		
+		self.new_user = Users("Simon","Gatheru","W3w3n!mkenya")
 		self.new_user.create_user()
 		self.another_user = Users("Twende","Kazi","mkenya")
 		self.another_user.create_user()
