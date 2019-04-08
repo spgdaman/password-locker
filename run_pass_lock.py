@@ -61,7 +61,7 @@ def main():
 			print(f"Your account is registered as follows, {fname} {lname} and {pwd} is your password")
 			
 		elif user_input == 'ln':
-			print("Enter your username and password below to log in to your account")
+			print("Enter your username and password below to log in to your account\n*Your first name is your default username*")
 			username = input("Enter your username here:		")
 			password = input("Enter your password here:		")
 			if user_check(username, password) == username:
@@ -70,7 +70,7 @@ def main():
 				while True:
 					print("................\n"*10)
 					print("Please use the following short codes to interact with the app")
-					user_input = input("sn - Save new credentials\n snp - Save new credentials with own password\n sc - Show credentials")
+					user_input = input("sn - Save new credentials\nsnp - Save new credentials with own password\n sc - Show credentials\n dc - Delete credentials\n ex - Exit")
 					
 					if user_input == 'sn':
 						print("Enter the account details you want saved below")
@@ -90,15 +90,18 @@ def main():
 						
 					elif user_input == 'sc':
 						print("Your saved credentials are as below")
-						 show_cred(username)
-
-
-
-
-
-
-
-	
+						show_cred(username)
+						 
+					elif user_input == 'dc':
+						print("Enter the platform's name and username whose credentials you want deleted below")
+						platform = input("Enter the name of the platform here:		")
+						username = input("Enter the username here:			")
+						show_cred(username)
+						print("Your credentials have been deleted!")
+						
+					elif user_input == 'ex':
+						print("Goodbye! come again!")
+						break
 	
 		elif user_input == 'lo':
 			print("Thank you for using password locker")

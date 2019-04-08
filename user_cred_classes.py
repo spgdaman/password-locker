@@ -38,7 +38,7 @@ class Credentials(Users):
 			Checks for matching credentials in user_info
 		"""
 		
-		for cred in user_info:
+		for cred in cls.user_info:
 			if cred.first == first and cred.password == password:
 				identity = cred.first
 		return identity
@@ -59,12 +59,12 @@ class Credentials(Users):
 		"""
 		Credentials.credentials_info.append(self)
 		
-	def password_gen():
+	def password_gen(size):
 		"""
 			Generate a random string of letters and digits 
 		"""
 		lettersAndNumbers = string.ascii_letters + string.digits
-		password = ''.join(random.choice(lettersAndNumbers) for i in range(8))
+		password = ''.join(random.choice(lettersAndNumbers) for i in range(int(size)))
 		return password
 	
 	@classmethod
