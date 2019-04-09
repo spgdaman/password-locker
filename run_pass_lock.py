@@ -32,11 +32,11 @@ def save_cred(cred):
 	'''
 	Credentials.save_cred(cred)
 
-def password_gen():
+def password_gen(size):
 	'''
 	Generates a random password_gen
 	'''
-	random = Credentials.password_gen
+	random = Credentials.password_gen(size)
 	return random
 
 def show_cred(username):
@@ -84,7 +84,8 @@ def main():
 						print("Enter the account details you want saved below")
 						username = input("Enter your username:		")
 						platform = input("Enter the platform:		")
-						pwd = password_gen()
+						len = input("Enter the length of your desired password in numbers:		")
+						pwd = password_gen(int(len))
 						create_cred(fname,username,platform,pwd)
 						print(f"Your credentials for site: {platform}, with username: {username} and password: {pwd} has been saved!")
 						
